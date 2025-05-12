@@ -19,7 +19,7 @@ axios.get(urlAPI).then((resp)=>{
                     </div>
                     <P>${date}</P>
                     <h3>${title}</h3>
-                    
+                    <img src="img/pin.svg" alt="pin" id="pin-img">
                 </div>
             </div>`
 

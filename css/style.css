@@ -23,7 +23,6 @@
 .container {
     width: 100%;
     margin: 0 auto;
-    height: 100vh;
     display: flex;
     justify-content: center; 
     align-items: center;
@@ -38,12 +37,12 @@
     width: 80%;
     display: flex;
     flex-wrap: wrap;
-    
+    justify-content: space-around;
 }
 
 .col{
     width: calc(100% / 3);
-    padding: 20px;
+    padding: 5px;
 }
 
 .card{
@@ -51,6 +50,15 @@
     padding: 10px;
     text-align: center;
     position: relative;
+}
+
+#pin-img {
+    position: absolute;
+    z-index: 999;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 45%;
 }
 
 .img-container {
@@ -66,3 +74,20 @@
   height: 100%;
   object-fit: cover;
 }
+
+
+@media screen and (min-width: 600px) { 
+    .col{
+        width: 100% ; 
+    }
+
+}
+
+
+@media screen and (min-width: 900px){
+    .col{
+        width:calc(100% /2);
+
+    }
+}
+
