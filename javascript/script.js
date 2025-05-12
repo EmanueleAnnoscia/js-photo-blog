@@ -11,14 +11,15 @@ axios.get(urlAPI).then((resp)=>{
      const posts = resp.data;
      let template = ``;
      posts.forEach((resp)=>{
-         const {title, url} = resp;
+         const {title, date, url} = resp;
          template += `<div class="col">
                 <div class="card">
                     <div class="img-container">
                         <img src="${url}" alt="">
                     </div>
+                    <P>${date}</P>
                     <h3>${title}</h3>
-                    <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit assumenda, ipsum doloremque, provident illo natus praesentium doloribus quas, iusto quae deleniti officiis inventore ipsa libero! Itaque laboriosam eligendi dicta modi.</P>
+                    
                 </div>
             </div>`
 
