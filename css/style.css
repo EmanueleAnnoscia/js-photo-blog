@@ -46,6 +46,10 @@
     padding: 20px;
 }
 
+.card{
+    background-color: white;
+}
+
 .img-container {
   width: 80%;
   height: 200px;
