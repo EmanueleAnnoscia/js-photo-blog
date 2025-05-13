@@ -27,3 +27,9 @@ axios.get(urlAPI).then((resp)=>{
 
      rowElem.innerHTML = template;
 })
+
+
+// // creazione template
+// function templateGen(){
+//     const {title, date, url} = resp;
+// }
