@@ -1,5 +1,7 @@
 // prelevo il contenitore delle card
 
+console.log('loris');
+
 const rowElem = document.querySelector(".row")
 
 // prelevo il bottone
@@ -11,13 +13,13 @@ const overlayImg = document.querySelector("#overlay-img");
 
 // inizializzo una variabile con l'url dell'API
 const urlAPI = "https://lanciweb.github.io/demo/api/pictures/"
+const imageUrl = 'https://marcolanci.it/boolean/assets/pictures/';
 
 // prelevo con axios 
 axios.get(urlAPI).then((resp)=>{
     console.log(resp);
      const posts = resp.data;
      generazionePosts(posts)
-     clickEvent(posts)
 })
 
 
@@ -39,13 +41,13 @@ function generazionePosts(array){
  function templateGen(postSingle){
      const {title, date, url} = postSingle;
      return `<div class="col">
-                <div class="card">
+                <div class="card" onclick="open('${url.substr(url.length - 5)}')">
                     <div class="img-container">
                         <img src="${url}" alt="">
                     </div>
                     <P>${date}</P>
                     <h3>${title}</h3>
-                    <img src="img/pin.svg" alt="pin" id="pin-img">
+                    <img src="img/pin.svg" alt="pin">
                 </div>
             </div>`
  }
@@ -56,17 +58,9 @@ btnElem.addEventListener("click", () => {
 });
 
 // funzione al click sulle card dell'overlay con data driven?
-function clickEvent(posts){
-    const cards = document.querySelectorAll(".card");
-
-    cards.forEach((card, index) => { //card è la singola card che prendo dal DOM^
-    // mentre index è la posizione della card nella lista posts siccome array 
-        card.addEventListener("click", function() {
-            const post = posts[index]; // Prendi il post corrispondente alla card cliccata
-            overlayImg.src = post.url; 
-            overlayContainer.classList.remove("d-none");
-        });
-    });
+function open(url){
+    overlayImg.src = imageUrl + url; 
+    overlayContainer.classList.remove("d-none");
 }
 
 
