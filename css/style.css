@@ -31,6 +31,7 @@
     background-position: center;
     background-repeat: no-repeat;
     padding: 20px;
+    height: 100vh;
 }
 
 .row {
@@ -57,7 +58,7 @@
     z-index: 999;
     width: 25px;
     height: 25px;
-    top: 0;
+    top: -12px;
     left: 45%;
 }
 
@@ -75,19 +76,4 @@
   object-fit: cover;
 }
 
-
-@media screen and (min-width: 600px) { 
-    .col{
-        width: 100% ; 
-    }
-
-}
-
-
-@media screen and (min-width: 900px){
-    .col{
-        width:calc(100% /2);
-
-    }
-}
 
